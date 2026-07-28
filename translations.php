@@ -52,7 +52,7 @@ $translations = [
     'whatsapp_desc' => '0856-7851-3359',
     'whatsapp_link' => 'Chat Sekarang',
     'quote' => 'Saya siap membantu mewujudkan ide-ide Anda menjadi aplikasi web yang powerful. Mari diskusikan proyek Anda dan bagaimana saya bisa membantu Anda mencapai tujuan.',
-    'product_link' => 'Lihat Produk Saya',
+    'product_link' => 'Lihat Karya Saya',
 
     // Footer
     'footer_tagline' => 'Full-Stack Web Developer | PHP Expert',
@@ -101,7 +101,7 @@ $translations = [
     'whatsapp_desc' => '0856-7851-3359',
     'whatsapp_link' => 'Chat Now',
     'quote' => 'I\'m ready to help bring your ideas to life as powerful web applications. Let\'s discuss your project and how I can help you achieve your goals.',
-    'product_link' => 'Checkout One of My Product Offering',
+    'product_link' => 'Checkout My Products',
 
     // Footer
     'footer_tagline' => 'Full-Stack Web Developer | PHP Expert',
