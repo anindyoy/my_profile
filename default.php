@@ -1,11 +1,15 @@
+<?php
+// Include translations
+require_once 'translations.php';
+?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="<?php echo $lang; ?>">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Anindyo Yudhistiro - Full-Stack Web Developer berpengalaman yang berspesialisasi dalam membangun aplikasi web modern dan skalabel menggunakan PHP, Laravel, dan teknologi terkini."
+      content="<?php echo $t['site_description']; ?>"
     />
     <meta
       name="keywords"
@@ -15,11 +19,11 @@
 
     <meta
       property="og:title"
-      content="Anindyo Yudhistiro - Full-Stack Web Developer"
+      content="<?php echo $t['site_title']; ?>"
     />
     <meta
       property="og:description"
-      content="Experienced Full-Stack Web Developer specializing in building scalable, modern, and user-friendly web applications using PHP and cutting-edge technologies."
+      content="<?php echo $t['og_description']; ?>"
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://anindyo.in/" />
@@ -31,10 +35,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@[NAMA_AKUN_TWITTER_ANDA]" />
     <meta name="twitter:creator" content="@[NAMA_AKUN_TWITTER_ANDA]" />
-    <meta name="twitter:title" content="Anindyo Yudhistiro - Web Developer" />
+    <meta name="twitter:title" content="<?php echo $t['site_title']; ?>" />
     <meta
       name="twitter:description"
-      content="Experienced Full-Stack Web Developer specializing in building scalable, modern, and user-friendly web applications using PHP and cutting-edge technologies."
+      content="<?php echo $t['twitter_description']; ?>"
     />
 
     <!-- <meta
@@ -42,7 +46,7 @@
       content="[GANTI DENGAN URL GAMBAR PROFIL/LOGO ANDA]"
     /> -->
 
-    <title>Anindyo Yudhistiro - Web Developer</title>
+    <title><?php echo $t['site_title']; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -109,6 +113,16 @@
     </style>
   </head>
   <body class="bg-gray-900 text-gray-100">
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+      <a href="?lang=id" class="px-3 py-1 rounded-lg text-sm font-semibold transition <?php echo $lang == 'id' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-400 hover:text-white'; ?>">
+        ID
+      </a>
+      <a href="?lang=en" class="px-3 py-1 rounded-lg text-sm font-semibold transition <?php echo $lang == 'en' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-400 hover:text-white'; ?>">
+        EN
+      </a>
+    </div>
+
     <!-- Hero Section -->
     <section
       id="home"
@@ -120,24 +134,22 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div class="text-blue-500 text-lg mb-4 code-line">
-              &lt;developer&gt;
+              <developer>
             </div>
 
-            <p class="text-gray-400 text-lg mb-2">Hi, my name is</p>
+            <p class="text-gray-400 text-lg mb-2"><?php echo $t['hero_greeting']; ?></p>
 
             <h1 class="text-6xl md:text-7xl font-black mb-6">
-              <span class="text-white">Anindyo</span><br />
+              <span class="text-white"><?php echo $t['hero_name_1']; ?></span><br />
               <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400"
               >
-                Yudhistiro
+                <?php echo $t['hero_name_2']; ?>
               </span>
             </h1>
 
             <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-              I'm an Experienced Full-Stack Web Developer specializing in
-              building scalable, modern, and user-friendly web applications
-              using PHP and cutting-edge technologies.
+              <?php echo $t['hero_description']; ?>
             </p>
 
             <div class="flex flex-wrap gap-4 mb-6">
@@ -146,19 +158,19 @@
                 class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold transition flex items-center gap-2"
               >
                 <i class="fab fa-whatsapp"></i>
-                Get in Touch
+                <?php echo $t['btn_contact']; ?>
               </a>
               <a
                 href="#tech"
                 class="border border-gray-700 hover:border-blue-500 px-8 py-4 rounded-lg font-semibold transition flex items-center gap-2"
               >
                 <i class="fas fa-code"></i>
-                View Skills
+                <?php echo $t['btn_skills']; ?>
               </a>
             </div>
 
             <div class="text-blue-500 text-lg code-line">
-              &lt;/developer&gt;
+              </developer>
             </div>
           </div>
 
@@ -211,10 +223,10 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-black mb-4">
-            <span class="text-blue-500">//</span> About Me
+            <span class="text-blue-500">//</span> <?php echo $t['about_title']; ?>
           </h2>
           <p class="text-gray-400 text-lg">
-            Passionate about creating digital solutions
+            <?php echo $t['about_subtitle']; ?>
           </p>
         </div>
 
@@ -223,10 +235,9 @@
             <div class="text-4xl mb-4 text-blue-500">
               <i class="fas fa-laptop-code"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Experience</h3>
+            <h3 class="text-2xl font-bold mb-3"><?php echo $t['experience_title']; ?></h3>
             <p class="text-gray-400">
-              Experienced in developing various web applications from
-              information systems to complex e-commerce platforms.
+              <?php echo $t['experience_desc']; ?>
             </p>
           </div>
 
@@ -234,10 +245,9 @@
             <div class="text-4xl mb-4 text-cyan-400">
               <i class="fas fa-code"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Clean Code</h3>
+            <h3 class="text-2xl font-bold mb-3"><?php echo $t['clean_code_title']; ?></h3>
             <p class="text-gray-400">
-              Writing clean, maintainable, and well-documented code following
-              best practices and design patterns.
+              <?php echo $t['clean_code_desc']; ?>
             </p>
           </div>
 
@@ -245,10 +255,9 @@
             <div class="text-4xl mb-4 text-purple-400">
               <i class="fas fa-rocket"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Performance</h3>
+            <h3 class="text-2xl font-bold mb-3"><?php echo $t['performance_title']; ?></h3>
             <p class="text-gray-400">
-              Focused on application performance optimization to deliver fast
-              and responsive user experience.
+              <?php echo $t['performance_desc']; ?>
             </p>
           </div>
         </div>
@@ -260,16 +269,16 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-black mb-4">
-            <span class="text-blue-500">//</span> Tech Stack
+            <span class="text-blue-500">//</span> <?php echo $t['tech_title']; ?>
           </h2>
-          <p class="text-gray-400 text-lg">Technologies I work with</p>
+          <p class="text-gray-400 text-lg"><?php echo $t['tech_subtitle']; ?></p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <div class="dark-card p-8 rounded-xl">
             <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
               <i class="fas fa-server text-blue-500"></i>
-              Backend Development
+              <?php echo $t['backend_title']; ?>
             </h3>
             <div class="flex flex-wrap gap-3">
               <a
@@ -316,7 +325,7 @@
           <div class="dark-card p-8 rounded-xl">
             <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
               <i class="fas fa-palette text-cyan-400"></i>
-              Frontend Development
+              <?php echo $t['frontend_title']; ?>
             </h3>
             <div class="flex flex-wrap gap-3">
               <a
@@ -374,7 +383,7 @@
         <div class="dark-card p-8 rounded-xl">
           <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
             <i class="fas fa-tools text-purple-400"></i>
-            Tools & Others
+            <?php echo $t['tools_title']; ?>
           </h3>
           <div class="flex flex-wrap gap-3">
             <a
@@ -443,10 +452,10 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-black mb-4">
-            <span class="text-blue-500">//</span> Let's Work Together
+            <span class="text-blue-500">//</span> <?php echo $t['contact_title']; ?>
           </h2>
           <p class="text-gray-400 text-lg">
-            Have a project in mind? Let's make it happen!
+            <?php echo $t['contact_subtitle']; ?>
           </p>
         </div>
 
@@ -460,10 +469,10 @@
             >
               <i class="fas fa-envelope"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-2">Email</h3>
-            <p class="text-gray-400 break-all">anindyo.yudhistiro@gmail.com</p>
+            <h3 class="text-2xl font-bold mb-2"><?php echo $t['email_title']; ?></h3>
+            <p class="text-gray-400 break-all"><?php echo $t['email_desc']; ?></p>
             <div class="mt-4 text-blue-500 flex items-center gap-2">
-              Send Email <i class="fas fa-arrow-right"></i>
+              <?php echo $t['email_link']; ?> <i class="fas fa-arrow-right"></i>
             </div>
           </a>
 
@@ -477,10 +486,10 @@
             >
               <i class="fab fa-whatsapp"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-2">WhatsApp</h3>
-            <p class="text-gray-400">0856-7851-3359</p>
+            <h3 class="text-2xl font-bold mb-2"><?php echo $t['whatsapp_title']; ?></h3>
+            <p class="text-gray-400"><?php echo $t['whatsapp_desc']; ?></p>
             <div class="mt-4 text-green-500 flex items-center gap-2">
-              Chat Now <i class="fas fa-arrow-right"></i>
+              <?php echo $t['whatsapp_link']; ?> <i class="fas fa-arrow-right"></i>
             </div>
           </a>
         </div>
@@ -488,9 +497,7 @@
         <div class="mt-12 dark-card p-8 rounded-xl text-center">
           <p class="text-gray-300 text-lg leading-relaxed">
             <span class="text-blue-500 font-bold">"</span>
-            I'm ready to help bring your ideas to life as powerful web
-            applications. Let's discuss your project and how I can help you
-            achieve your goals.
+            <?php echo $t['quote']; ?>
             <span class="text-blue-500 font-bold">"</span>
           </p>
         </div>
@@ -503,7 +510,7 @@
             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 px-8 py-4 rounded-lg font-semibold transition transform hover:scale-105"
           >
             <i class="fas fa-shopping-cart"></i>
-            Checkout One of My Product Offering
+            <?php echo $t['product_link']; ?>
           </a>
         </div>
       </div>
@@ -513,11 +520,11 @@
     <footer class="py-8 px-4 border-t border-gray-800">
       <div class="max-w-7xl mx-auto text-center">
         <div class="text-2xl font-bold mb-4">
-          <span class="text-blue-500">&lt;</span>
+          <span class="text-blue-500"><</span>
           <span class="text-white">Anindyo Yudhistiro</span>
-          <span class="text-blue-500">/&gt;</span>
+          <span class="text-blue-500">/></span>
         </div>
-        <p class="text-gray-400 mb-4">Full-Stack Web Developer | PHP Expert</p>
+        <p class="text-gray-400 mb-4"><?php echo $t['footer_tagline']; ?></p>
         <div class="flex justify-center gap-6 text-2xl">
           <a
             href="mailto:anindyo.yudhistiro@gmail.com"
@@ -534,8 +541,7 @@
           </a>
         </div>
         <p class="text-gray-600 text-sm mt-6">
-          © <span id="currentYear"></span> Anindyo Yudhistiro. Built with
-          passion & code.
+          <?php echo $t['copyright']; ?>
         </p>
       </div>
     </footer>
