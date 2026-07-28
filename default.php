@@ -154,11 +154,13 @@ require_once 'translations.php';
 
             <div class="flex flex-wrap gap-4 mb-6">
               <a
-                href="https://wa.me/6285678513359"
+                href="sistembisnis"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold transition flex items-center gap-2"
               >
-                <i class="fab fa-whatsapp"></i>
-                <?php echo $t['btn_contact']; ?>
+                <i class="fas fa-list"></i>
+                <?php echo $t['product_link']; ?>
               </a>
               <a
                 href="#tech"
@@ -504,13 +506,12 @@ require_once 'translations.php';
 
         <div class="mt-8 text-center">
           <a
-            href="sistembisnis"
+            href="https://wa.me/6285678513359"
             target="_blank"
-            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 px-8 py-4 rounded-lg font-semibold transition transform hover:scale-105"
           >
-            <i class="fas fa-shopping-cart"></i>
-            <?php echo $t['product_link']; ?>
+            <i class="fab fa-whatsapp"></i>
+            <?php echo $t['btn_contact']; ?>
           </a>
         </div>
       </div>
